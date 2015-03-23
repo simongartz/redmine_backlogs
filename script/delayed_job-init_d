@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+ 
+# chkconfig: 2345 99 20
+# description: Starts and stops delayed job
+# hopefully
+# processname: delayed_job
+ 
+. /etc/rc.d/init.d/functions
+
+rails_root=/var/lib/redmine
+user=apache
+
+function start() {
+  pushd $rails_root
+  runuser -s /bin/bash $user -c 'RAILS_ENV=production ./plugins/redmine_backlogs/script/delayed_job -n2 start'
+  popd
+}
+ 
+function stop() {
+  pushd $rails_root
+  runuser -s /bin/bash $user -c 'RAILS_ENV=production ./plugins/redmine_backlogs/script/delayed_job stop'
+  popd
+}
+ 
+function status() {
+  pushd $rails_root
+  runuser -s /bin/bash $user -c 'RAILS_ENV=production ./plugins/redmine_backlogs/script/delayed_job status'
+  popd
+}
+ 
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  status)
+    status
+    ;;
+  restart|graceful)
+    stop
+    start
+    ;;
+  reload)
+    stop
+    start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|reload|status}"
+    exit 1
+    ;;
+esac
+ 
+exit 0
+ 
+ 
+# sudo chkconfig --add delayed_job
+# sudo chkconfig -–level 2345 delayed_job on
