@@ -16,6 +16,9 @@ gem "prawn"
 gem 'json'
 gem "system_timer" if RUBY_VERSION =~ /^1\.8\./ && RUBY_PLATFORM =~ /darwin|linux/
 
+# https://github.com/backlogs/redmine_backlogs/issues/998#issuecomment-31728148
+gem "delayed_job_active_record", "~> 4.0.0"
+
 group :development do
   gem "inifile"
 end
