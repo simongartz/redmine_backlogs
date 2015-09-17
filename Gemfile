@@ -10,7 +10,7 @@ RAILS_VERSION_IS_3 = rails3 =~ deps['rails']
 
 gem "holidays", "~>1.0.3"
 gem "icalendar"
-gem "nokogiri", "1.6.0"
+gem "nokogiri"
 gem "open-uri-cached"
 gem "prawn"
 gem 'json'
@@ -59,7 +59,7 @@ group :test do
     gem "rspec-rails", "=1.3.3"
   end
   if RUBY_VERSION >= "1.9"
-    gem "simplecov", "~>0.6"
+    gem "simplecov", "~> 0.9.1"
   else
     gem "rcov",  "=0.9.11"
   end
