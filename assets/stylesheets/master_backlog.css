@@ -683,10 +683,10 @@ ul li { vertical-align: bottom; } /* close IE7 gap between list items */
   background-color:#EFF0BF;
 }
 #backlogs_container .stories .tracker7{
-  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#FED0D0));
-  background: -moz-linear-gradient(top, #EEE, #FED0D0);
-  filter:progid:DXImageTransform.Microsoft.Gradient(Enabled=1,GradientType=0,StartColorStr=#EEEEEE,EndColorStr=#FED0D0);
-  background-color:#FED0D0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#FAFAFA));
+  background: -moz-linear-gradient(top, #EEE, #FAFAFA);
+  filter:progid:DXImageTransform.Microsoft.Gradient(Enabled=1,GradientType=0,StartColorStr=#EEEEEE,EndColorStr=#FAFAFA);
+  background-color:#FAFAFA;
 }
 #backlogs_container .stories .story_field {
   overflow: hidden;
